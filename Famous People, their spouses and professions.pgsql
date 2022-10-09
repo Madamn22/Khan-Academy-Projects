@@ -64,6 +64,12 @@ join famous_people Spouse on Person1.id=Spouse.spouse_id
 join Profession on Spouse.id=profession.people_id;
 
 
+--What everybody does. 
+Select Person1.First_name as Actor, Person_job.title as Their_Job, Spouse.first_name as Apouse_name, Profession.title as Spouse_Job
+from famous_people as Person1
+join famous_people Spouse on Person1.id=Spouse.spouse_id
+join Profession on Spouse.id=profession.people_id
+join Profession as Person_job on Person1.id=person_job.people_id
 
 
 
