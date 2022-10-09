@@ -21,3 +21,8 @@ INSERT INTO movies
 INSERT INTO movies 
     VALUES (8, 'Harry Potter and the Deathly Hallows – Part 2', 2011, NULL);
     
+--movies and their sequels (null where none)
+Select movies.title, coalesce(sequel.title, 'Last movie in Franchise') as Sequel_title
+from movies
+left outer join movies sequel
+on movies.sequel_id=sequel.id;
