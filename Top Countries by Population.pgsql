@@ -224,5 +224,16 @@ from countries;
 --countries with populations greater than 100 million
 Select name as countries_with_over_100m 
 from countries 
-where population > 100000000
-;
+where population > 100000000;
+
+--likely populated, likely populated and normally populated countries
+--NB: grouping is arbitrary
+Select 
+case
+    when fertility_rate <2 then 'Likely unpopulated'
+    when fertility_rate > 3 then 'likely overpopulated'
+    else 'population ok'
+end as Fertility_indication_based_on_pop,
+count(*) as number_of_countries
+from countries
+group by Fertility_indication_based_on_pop;
