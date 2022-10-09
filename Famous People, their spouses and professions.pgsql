@@ -45,6 +45,12 @@ INSERT INTO Profession VALUES (8, 'Ballet Dancer', 8);
 INSERT INTO Profession VALUES (9, 'IG Model', 7);
 INSERT INTO Profession VALUES (10, 'Stuntist', 6);
 
+--What they do 
+select Famous_people.First_name as Name, Profession.title as Their_Profession
+from Famous_People
+join Profession on Famous_people.id=Profession.people_id;
+
+
 
 
 
