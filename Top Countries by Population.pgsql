@@ -237,3 +237,10 @@ end as Fertility_indication_based_on_pop,
 count(*) as number_of_countries
 from countries
 group by Fertility_indication_based_on_pop;
+
+--country with the smallest population
+--decided not to use min(population)
+select name, population as min_population
+from countries
+order by population
+limit 1;
