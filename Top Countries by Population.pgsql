@@ -244,3 +244,11 @@ select name, population as min_population
 from countries
 order by population
 limit 1;
+
+
+--median population of the set
+select population as median_population_of_set from (select row_number() over (order by population asc) as asc_rownum, 
+row_number() over (order by population desc) as desc_rownum, 
+ population
+from countries) as median_table
+where asc_rownum in (desc_rownum, desc_rownum+1, desc_rownum-1)
