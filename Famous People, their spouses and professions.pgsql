@@ -51,6 +51,18 @@ from Famous_People
 join Profession on Famous_people.id=Profession.people_id;
 
 
+--Who they are married to using Self join 
+Select Person1.First_name as Name, Spouse.first_name as Spouse_name
+from famous_people as Person1
+join famous_people Spouse on Person1.id=Spouse.spouse_id;
+
+
+--What each spouse does. 
+Select Person1.First_name as Actor, Spouse.first_name as Spouse_name, Profession.title as Spouse_Job
+from famous_people as Person1
+join famous_people Spouse on Person1.id=Spouse.spouse_id
+join Profession on Spouse.id=profession.people_id;
+
 
 
 
